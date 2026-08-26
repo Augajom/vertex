@@ -426,3 +426,98 @@ $lang['footer_heading_policy'] = "Policies & Agreements";
 $lang['footer_heading_contact'] = "Contact Information";
 $lang['label_email'] = "Email";
 $lang['footer_rights'] = "All rights reserved.";
+// ==========================================
+// FAQ KEYS
+// ==========================================
+$lang['nav_faq'] = "FAQ";
+$lang['faq_title'] = "Frequently Asked Questions";
+$lang['faq_subtitle'] = "All questions and answers regarding our PICO Finance loan services";
+$lang['faq_still_have_questions'] = "Still have questions?";
+$lang['faq_contact_support'] = "If you have any other questions, feel free to contact our customer support team anytime.";
+
+// Category 1: Basic Loan Information
+$lang['faq_cat_1_title'] = "Basic Loan Information";
+
+$lang['faq_q1_title'] = "What type of loan does Skylink offer?";
+$lang['faq_a1_p1'] = "Skylink is an unsecured retail loan provider (PICO Finance) licensed under the supervision of the Ministry of Finance.";
+$lang['faq_a1_p2'] = "Suitable for salaried employees, freelancers, and small business owners.";
+$lang['faq_a1_p3'] = "Can be used for emergency funds, working capital, or small legal business expenses.";
+$lang['faq_a1_p4'] = "We provide legitimate, transparent services strictly following regulatory guidelines.";
+
+$lang['faq_q2_title'] = "Is collateral or a guarantor required?";
+$lang['faq_a2_p1'] = "Our loans do not require any collateral or guarantors. Approvals are based on personal creditworthiness.";
+$lang['faq_a2_p2'] = "As long as you meet the eligibility criteria, you can apply for a loan with us.";
+
+$lang['faq_q3_title'] = "What is the credit limit and repayment term?";
+$lang['faq_a3_limit'] = "Credit Limit: Up to 50,000 THB";
+$lang['faq_a3_term'] = "Repayment Term: 91–180 days (3–5 installments as desired)";
+
+$lang['faq_q4_title'] = "What can the loan amount be used for?";
+$lang['faq_a4_p1'] = "The loan can be used for any lawful purpose such as daily emergency expenses, working capital, personal needs, or small business operations.";
+$lang['faq_a4_p2'] = "It cannot be used for any illegal activities.";
+
+// Category 2: Eligibility Requirements
+$lang['faq_cat_2_title'] = "Eligibility Requirements";
+
+$lang['faq_q5_title'] = "What are the eligibility criteria to apply?";
+$lang['faq_a5_p1'] = "Applicants must be at least 20 years old, Thai nationals, with a monthly income of 15,000 THB or more and consistent bank inflows. No active overdue history (past overdue that is fully settled is acceptable).";
+
+$lang['faq_q6_title'] = "Can freelancers or small business owners apply?";
+$lang['faq_a6_p1'] = "Yes, freelancers and small business owners can apply. Regular income with continuous bank deposits is required for approval consideration.";
+
+$lang['faq_q7_title'] = "Can I apply if I had past overdue records?";
+$lang['faq_a7_p1'] = "Yes. If there is no current outstanding default and past overdue amounts have been fully cleared, it will not affect loan approval consideration.";
+
+// Category 3: Application Documents & Process
+$lang['faq_cat_3_title'] = "Application Documents & Process";
+
+$lang['faq_q8_title'] = "What documents are required to apply?";
+$lang['faq_a8_p1'] = "Only a valid Thai National ID Card is required. No house registration, employment certificate, or bank statement is necessary.";
+
+$lang['faq_q9_title'] = "What are the steps to apply?";
+$lang['faq_a9_step1'] = "① Download and install the \"Yuem Sabuy\" app on your mobile phone, then register with your phone number.";
+$lang['faq_a9_step2'] = "② Fill in personal information and upload your National ID card for verification.";
+$lang['faq_a9_step3'] = "③ Select your desired loan amount and repayment period.";
+$lang['faq_a9_step4'] = "④ Await credit assessment and approval.";
+$lang['faq_a9_step5'] = "⑤ Once approved, the funds will be transferred directly to your bank account.";
+
+$lang['faq_q10_title'] = "How long does application and approval take?";
+$lang['faq_a10_p1'] = "Application takes about 5 minutes. Once submitted completely, approval results can be received in as fast as 3 minutes.";
+
+$lang['faq_q11_title'] = "Where can I apply for the loan?";
+$lang['faq_a11_p1'] = "Apply only through the official Skylink website or \"Yuem Sabuy\" mobile app. We have no third-party agents. Please beware of impostors.";
+
+// Category 4: Interest Rate Details
+$lang['faq_cat_4_title'] = "Interest Rate Details";
+
+$lang['faq_q12_title'] = "What is the interest rate?";
+$lang['faq_a12_p1'] = "Daily interest rate is approximately 0.04%–0.098%, equivalent to an annual rate of 14.6%–35.8%, strictly adhering to regulatory rules not exceeding 35.8% APR.";
+
+$lang['faq_q13_title'] = "Are there any hidden fees?";
+$lang['faq_a13_p1'] = "There are no hidden fees whatsoever. No application fee, processing fee, service fee, or prepayment penalties. Only lawful interest is charged.";
+
+$lang['faq_q14_title'] = "If I borrow 36,000 THB, what would the repayment look like?";
+$lang['faq_a14_intro'] = "Example repayment calculation for a 36,000 THB loan:";
+$lang['faq_a14_item1'] = "Loan 36,000 THB, daily rate 0.04%, term 120 days (3 installments).";
+$lang['faq_a14_item2'] = "Installment payment: 12,576 THB per term (Principal 12,000 THB + Interest 576 THB).";
+$lang['faq_a14_item3'] = "Total interest: 1,728 THB.";
+$lang['faq_a14_item4'] = "Total repayment: 37,728 THB.";
+$lang['faq_a14_note'] = "(The above figures are examples only. Final credit limit and actual interest rate depend on applicant qualifications).";
+
+$lang['faq_q15_title'] = "Is there a penalty for early repayment?";
+$lang['faq_a15_p1'] = "No penalty at all. You can repay or close the account early at any time. Interest is calculated strictly based on actual days used; unaccrued interest is waived.";
+
+// Category 5: Repayment Methods
+$lang['faq_cat_5_title'] = "Repayment Methods";
+
+$lang['faq_q16_title'] = "What payment channels are supported?";
+$lang['faq_a16_p1'] = "Yuem Sabuy supports repayment via QR PromptPay from any Thai bank.";
+
+$lang['faq_q17_title'] = "Is the installment amount fixed for each period?";
+$lang['faq_a17_p1'] = "Yes, each installment payment amount remains fixed throughout the contract based on the approved terms.";
+
+$lang['faq_q18_title'] = "When will the app status update after payment?";
+$lang['faq_a18_p1'] = "Status updates automatically within 5 minutes after successful payment. You can check transactions in real-time on the app.";
+
+$lang['faq_q19_title'] = "How can I check my billing statement?";
+$lang['faq_a19_p1'] = "Log in to the \"Yuem Sabuy\" app, navigate to the \"Repayment\" page to view detailed information including principal, interest, due date, and total balance.";

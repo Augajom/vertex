@@ -1,109 +1,169 @@
 <!-- About Hero -->
-<section class="hero-section " style="padding-top: 140px; padding-bottom: 60px;">
-    <div class="container-xxl">
-        <div class="text-center max-w-800 mx-auto">
+<section class="hero-section-home position-relative" style="padding-top: 130px; padding-bottom: 60px;">
+    <div class="hero-aura-blob-1"></div>
+    <div class="container-xxl position-relative" style="z-index: 2;">
+        <div class="text-center max-w-700 mx-auto">
             <span class="badge-pico mb-3">
-                <i class="fas fa-building-columns text-info"></i> PICO Finance Regulated
+                <i class="fas fa-building-columns"></i> PICO Finance Regulated
             </span>
-            <h1 class="display-4 text-white fw-bold mb-3"><?= $this->lang->line('about_hero_title'); ?></h1>
-            <p class="lead text-slate fs-5"><?= $this->lang->line('about_hero_subtitle'); ?></p>
+            <h1 class="display-4 fw-extrabold text-heading mb-3"><?= $this->lang->line('about_title'); ?></h1>
+            <p class="lead text-primary fw-bold fs-4 mb-2"><?= $this->lang->line('company_intro_title'); ?></p>
+            <p class="text-muted fs-6"><?= $this->lang->line('company_intro_tagline'); ?></p>
         </div>
     </div>
 </section>
 
-<!-- Company Details Paragraphs -->
-<section class="py-5 position-relative" style="z-index: 2;">
+<!-- Company Details & Belief Section -->
+<section class="py-5 position-relative" style="background: #FFFFFF;">
     <div class="container-xxl">
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <div class="card-3d p-4 p-md-5">
-                    <!-- Row 1: Image Banner (Top) -->
-                    <div class="mb-4 text-center">
-                        <div class="p-2 rounded-4 d-inline-block w-100" style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(56, 189, 248, 0.25); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);">
-                            <img src="<?= base_url('assets/images/pic1.jpg'); ?>" alt="<?= $this->lang->line('company_fullname'); ?>" class="img-fluid rounded-4" style="max-height: 480px; width: 100%; object-fit: cover;">
-                        </div>
+        <div class="row g-4 align-items-stretch">
+            
+            <!-- Column 1: Company Profile Image + Detail Paragraphs -->
+            <div class="col-lg-6">
+                <div class="card-3d p-4 h-100 d-flex flex-column">
+                    <div class="mb-4 overflow-hidden rounded-4">
+                        <img src="<?= base_url('assets/images/pic01.png'); ?>" alt="<?= $this->lang->line('company_fullname'); ?>" class="img-fluid w-100" style="height: 280px; object-fit: cover;">
                     </div>
-
-                    <!-- Row 2: Company Details Text (Bottom) -->
-                    <h3 class="text-white fw-bold mb-4 border-start border-4 border-info ps-3">
+                    <h4 class="fw-bold text-heading mb-3 border-start border-4 border-primary ps-3">
                         <?= $this->lang->line('company_fullname'); ?>
-                    </h3>
-                    <p class="text-slate mb-4 fs-5" style="line-height: 1.85;">
-                        <?= $this->lang->line('about_p1'); ?>
+                    </h4>
+                    <p class="text-body fs-6 mb-3" style="line-height: 1.85;">
+                        <?= $this->lang->line('company_intro_p1'); ?>
                     </p>
-                    <p class="text-slate mb-4 fs-5" style="line-height: 1.85;">
-                        <?= $this->lang->line('about_p2'); ?>
+                    <p class="text-body fs-6 mb-4" style="line-height: 1.85;">
+                        <?= $this->lang->line('company_intro_p2'); ?>
                     </p>
-                    <p class="text-slate mb-4 fs-5" style="line-height: 1.85;">
-                        <?= $this->lang->line('about_p3'); ?>
-                    </p>
-                    <p class="text-slate mb-0 fs-5" style="line-height: 1.85;">
-                        <?= $this->lang->line('about_p4'); ?>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- Why Choose Us (5 Cards) -->
-<section class="py-5 position-relative" style="z-index: 2; background: rgba(210, 207, 207, 0.05);">
-    <div class="container-xxl">
-        <div class="text-center mb-5">
-            <h2 class="display-6 text-white fw-bold mb-2"><?= $this->lang->line('why_us_title'); ?></h2>
-            <div class="mx-auto" style="width: 60px; height: 4px; background: linear-gradient(90deg, var(--primary-blue), var(--primary-glow)); border-radius: 2px;"></div>
-        </div>
-
-        <div class="row g-4 justify-content-center">
-            <?php $why_cards = $this->lang->line('why_us_cards'); ?>
-            <?php if (!empty($why_cards)): ?>
-                <?php foreach ($why_cards as $c_idx => $card): ?>
-                    <div class="<?= ($c_idx < 3) ? 'col-lg-4 col-md-6' : 'col-lg-6 col-md-6'; ?>">
-                        <div class="card-3d d-flex align-items-center gap-3 p-4 h-100">
-                            <div class="card-icon-wrapper mb-0" style="width: 48px; height: 48px; min-width: 48px; font-size: 1.2rem;">
-                                <i class="fas <?= $card['icon']; ?>"></i>
-                            </div>
-                            <div>
-                                <h5 class="text-white mb-0 fw-bold fs-5"><?= $card['title']; ?></h5>
-                                <?php if (!empty($card['desc'])): ?>
-                                    <p class="text-slate mb-0 small mt-1" style="line-height: 1.7;"><?= $card['desc']; ?></p>
-                                <?php endif; ?>
-                            </div>
+                    <div class="d-flex flex-column gap-3 flex-grow-1 justify-content-between">
+                        <!-- Belief Card -->
+                        <div class="p-3 rounded-3 flex-grow-1 d-flex flex-column justify-content-center" style="background: var(--violet-subtle-bg); border-left: 4px solid var(--primary-violet);">
+                            <h6 class="fw-bold text-heading mb-1 d-flex align-items-center gap-2">
+                                <i class="fas fa-quote-left text-primary"></i> <?= $this->lang->line('about_belief_head'); ?>
+                            </h6>
+                            <p class="small text-body mb-0 fst-italic" style="line-height: 1.7;">
+                                "<?= $this->lang->line('about_belief_text'); ?>"
+                            </p>
                         </div>
-                    </div>
-                <?php endforeach; ?>
-            <?php endif; ?>
-        </div>
-    </div>
-</section>
 
-<!-- Why Choose Our Loan (5 Features) -->
-<section class="py-5 position-relative" style="z-index: 2;">
-    <div class="container-xxl">
-        <div class="text-center mb-5">
-            <h2 class="display-6 text-white fw-bold mb-2"><?= $this->lang->line('why_loan_title'); ?></h2>
-            <div class="mx-auto" style="width: 60px; height: 4px; background: linear-gradient(90deg, var(--primary-blue), var(--primary-glow)); border-radius: 2px;"></div>
-        </div>
-
-        <div class="row g-4 justify-content-center">
-            <?php $why_loan = $this->lang->line('why_loan_features'); ?>
-            <?php if (!empty($why_loan)): ?>
-                <?php foreach ($why_loan as $index => $item): ?>
-                    <div class="<?= ($index < 3) ? 'col-lg-4 col-md-6' : 'col-lg-6 col-md-6'; ?>">
-                        <div class="card-3d p-4 h-100 d-flex flex-column justify-content-start">
-                            <div class="d-flex align-items-center gap-3 mb-3">
-                                <div class="badge rounded-circle bg-info bg-opacity-25 text-info p-3 font-weight-bold fs-5" style="width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; min-width: 42px;">
-                                    <?= $index + 1; ?>
-                                </div>
-                                <h5 class="text-white mb-0 fw-bold"><?= $item['title']; ?></h5>
-                            </div>
-                            <p class="text-slate small mb-0 mt-auto" style="line-height: 1.65;">
-                                <?= $item['desc']; ?>
+                        <!-- Vision Card -->
+                        <div class="p-3 rounded-3 flex-grow-1 d-flex flex-column justify-content-center" style="background: var(--violet-subtle-bg); border-left: 4px solid var(--secondary-cobalt);">
+                            <h6 class="fw-bold text-heading mb-1 d-flex align-items-center gap-2">
+                                <i class="fas fa-eye text-primary"></i> <?= $this->lang->line('about_vision_title'); ?>
+                            </h6>
+                            <p class="small text-body mb-0" style="line-height: 1.7;">
+                                <?= $this->lang->line('about_vision_text'); ?>
                             </p>
                         </div>
                     </div>
-                <?php endforeach; ?>
-            <?php endif; ?>
+                </div>
+            </div>
+
+            <!-- Column 2: Mission Image + 4-Step Mission Matrix -->
+            <div class="col-lg-6">
+                <div class="card-3d p-4 h-100 d-flex flex-column">
+                    <div class="mb-4 overflow-hidden rounded-4">
+                        <img src="<?= base_url('assets/images/pic02.jpg'); ?>" alt="<?= $this->lang->line('about_mission_title'); ?>" class="img-fluid w-100" style="height: 280px; object-fit: cover;">
+                    </div>
+                    <h4 class="fw-bold text-heading mb-3"><?= $this->lang->line('about_mission_title'); ?></h4>
+
+                    <div class="d-flex flex-column gap-3 flex-grow-1 justify-content-between">
+                        <!-- Mission 01 -->
+                        <div class="mission-matrix-card flex-grow-1 d-flex flex-column justify-content-center">
+                            <span class="mission-num-badge"><?= $this->lang->line('about_mission_1_title'); ?></span>
+                            <p class="small text-body mb-0" style="line-height: 1.6;"><?= $this->lang->line('about_mission_1_desc'); ?></p>
+                        </div>
+                        <!-- Mission 02 -->
+                        <div class="mission-matrix-card flex-grow-1 d-flex flex-column justify-content-center">
+                            <span class="mission-num-badge"><?= $this->lang->line('about_mission_2_title'); ?></span>
+                            <p class="small text-body mb-0" style="line-height: 1.6;"><?= $this->lang->line('about_mission_2_desc'); ?></p>
+                        </div>
+                        <!-- Mission 03 -->
+                        <div class="mission-matrix-card flex-grow-1 d-flex flex-column justify-content-center">
+                            <span class="mission-num-badge"><?= $this->lang->line('about_mission_3_title'); ?></span>
+                            <p class="small text-body mb-0" style="line-height: 1.6;"><?= $this->lang->line('about_mission_3_desc'); ?></p>
+                        </div>
+                        <!-- Mission 04 -->
+                        <div class="mission-matrix-card flex-grow-1 d-flex flex-column justify-content-center">
+                            <span class="mission-num-badge"><?= $this->lang->line('about_mission_4_title'); ?></span>
+                            <p class="small text-body mb-0" style="line-height: 1.6;"><?= $this->lang->line('about_mission_4_desc'); ?></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- 4 Core Values Bento Box -->
+<section class="py-5 position-relative" style="background: var(--bg-page);">
+    <div class="container-xxl">
+        <div class="text-center max-w-700 mx-auto mb-5">
+            <span class="badge-pico mb-2">
+                <i class="fas fa-gem"></i> Core Values
+            </span>
+            <h2 class="display-6 fw-bold text-heading"><?= $this->lang->line('core_values_head1'); ?></h2>
+            <p class="text-primary fw-semibold fs-5"><?= $this->lang->line('core_values_head2'); ?></p>
+        </div>
+
+        <div class="row g-4 mb-5">
+            <!-- 1. สมัครง่าย -->
+            <div class="col-lg-6 col-md-6">
+                <div class="card-3d p-4 h-100 d-flex flex-column">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="card-icon-wrapper mb-0">
+                            <i class="fas fa-mobile-screen-button"></i>
+                        </div>
+                        <h4 class="fw-bold mb-0 text-heading"><?= $this->lang->line('val_easy_apply_title'); ?></h4>
+                    </div>
+                    <p class="text-body mb-0 fs-6" style="line-height: 1.75;"><?= $this->lang->line('val_easy_apply_desc'); ?></p>
+                </div>
+            </div>
+
+            <!-- 2. เข้าถึงง่าย -->
+            <div class="col-lg-6 col-md-6">
+                <div class="card-3d p-4 h-100 d-flex flex-column">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="card-icon-wrapper mb-0">
+                            <i class="fas fa-handshake-angle"></i>
+                        </div>
+                        <h4 class="fw-bold mb-0 text-heading"><?= $this->lang->line('val_accessible_title'); ?></h4>
+                    </div>
+                    <p class="text-body mb-0 fs-6" style="line-height: 1.75;"><?= $this->lang->line('val_accessible_desc'); ?></p>
+                </div>
+            </div>
+
+            <!-- 3. โปร่งใส -->
+            <div class="col-lg-6 col-md-6">
+                <div class="card-3d p-4 h-100 d-flex flex-column">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="card-icon-wrapper mb-0">
+                            <i class="fas fa-scale-balanced"></i>
+                        </div>
+                        <h4 class="fw-bold mb-0 text-heading"><?= $this->lang->line('val_transparent_title'); ?></h4>
+                    </div>
+                    <p class="text-body mb-0 fs-6" style="line-height: 1.75;"><?= $this->lang->line('val_transparent_desc'); ?></p>
+                </div>
+            </div>
+
+            <!-- 4. รับผิดชอบ -->
+            <div class="col-lg-6 col-md-6">
+                <div class="card-3d p-4 h-100 d-flex flex-column">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="card-icon-wrapper mb-0">
+                            <i class="fas fa-heart-pulse"></i>
+                        </div>
+                        <h4 class="fw-bold mb-0 text-heading"><?= $this->lang->line('val_responsible_title'); ?></h4>
+                    </div>
+                    <p class="text-body mb-0 fs-6" style="line-height: 1.75;"><?= $this->lang->line('val_responsible_desc'); ?></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <a href="<?= site_root_url('services'); ?>" class="btn-primary-3d py-3 px-5 fs-6">
+                <i class="fas fa-hand-holding-dollar"></i> <?= $this->lang->line('nav_services'); ?>
+            </a>
         </div>
     </div>
 </section>
