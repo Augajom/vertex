@@ -160,10 +160,5 @@
             </div>
         </div>
 
-        <div class="text-center">
-            <a href="<?= site_root_url('services'); ?>" class="btn-primary-3d py-3 px-5 fs-6">
-                <i class="fas fa-hand-holding-dollar"></i> <?= $this->lang->line('nav_services'); ?>
-            </a>
-        </div>
     </div>
 </section>

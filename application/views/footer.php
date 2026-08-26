@@ -67,11 +67,11 @@
 <!-- Bootstrap JS Bundle -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Interactive FinTech Scripts & Micro-interactions -->
+<!-- Interactive FinTech Scripts & Cyber Micro-interactions -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     
-    // 1. Interactive Loan Calculator
+    // 1. Interactive Loan Calculator with Digital Matrix Decrypt Counter
     const amountSlider = document.getElementById('calcLoanAmount');
     const termSlider = document.getElementById('calcLoanTerm');
     const amountDisplay = document.getElementById('calcAmountDisplay');
@@ -90,41 +90,40 @@ document.addEventListener('DOMContentLoaded', function () {
         slider.style.background = `linear-gradient(to right, #6644EC 0%, #2F5EEB ${pct}%, #CBD5E1 ${pct}%, #CBD5E1 100%)`;
     }
 
-    let prevMonthly = 0;
-    let prevPrincipal = 0;
-    let prevInterest = 0;
-    let prevTotal = 0;
-
-    // High-Performance Smooth Number Odometer Engine
-    function animateValue(element, startVal, endVal, duration = 320, prefix = '', suffix = '') {
+    // High-Speed Cyber Matrix Decrypt Counter Engine (Unique to Vertex)
+    function animateMatrixCounter(element, targetVal, duration = 280, prefix = '', suffix = '') {
         if (!element) return;
-        if (startVal === endVal) {
-            element.textContent = prefix + Math.round(endVal).toLocaleString('th-TH') + suffix;
-            return;
-        }
-
+        const targetNum = Math.round(targetVal);
+        const targetStr = targetNum.toLocaleString('th-TH');
+        const matrixChars = '0123456789%#@*&';
         const startTime = performance.now();
-        const range = endVal - startVal;
 
-        if (element._animId) cancelAnimationFrame(element._animId);
+        if (element._matrixAnimId) cancelAnimationFrame(element._matrixAnimId);
 
-        function updateCounter(currentTime) {
-            const elapsed = currentTime - startTime;
+        function frame(now) {
+            const elapsed = now - startTime;
             const progress = Math.min(elapsed / duration, 1);
-            const ease = 1 - Math.pow(1 - progress, 3); // Cubic Ease Out
-            const currentVal = startVal + range * ease;
-
-            element.textContent = prefix + Math.round(currentVal).toLocaleString('th-TH') + suffix;
 
             if (progress < 1) {
-                element._animId = requestAnimationFrame(updateCounter);
+                let scrambled = '';
+                for (let i = 0; i < targetStr.length; i++) {
+                    if (targetStr[i] === ',') {
+                        scrambled += ',';
+                    } else if (Math.random() < progress * 1.2) {
+                        scrambled += targetStr[i];
+                    } else {
+                        scrambled += matrixChars[Math.floor(Math.random() * matrixChars.length)];
+                    }
+                }
+                element.textContent = prefix + scrambled + suffix;
+                element._matrixAnimId = requestAnimationFrame(frame);
             } else {
-                element.textContent = prefix + Math.round(endVal).toLocaleString('th-TH') + suffix;
-                element._animId = null;
+                element.textContent = prefix + targetStr + suffix;
+                element._matrixAnimId = null;
             }
         }
 
-        element._animId = requestAnimationFrame(updateCounter);
+        element._matrixAnimId = requestAnimationFrame(frame);
     }
 
     function calculateLoan(animate = false) {
@@ -150,21 +149,16 @@ document.addEventListener('DOMContentLoaded', function () {
         const roundTotal = Math.round(totalRepay);
 
         if (animate) {
-            animateValue(monthlyDisplay, prevMonthly || roundMonthly * 0.75, roundMonthly, 350, '฿');
-            animateValue(principalDisplay, prevPrincipal || P * 0.75, P, 320, '฿');
-            animateValue(interestDisplay, prevInterest || roundInterest * 0.75, roundInterest, 320, '฿');
-            animateValue(totalDisplay, prevTotal || roundTotal * 0.75, roundTotal, 350, '฿');
+            animateMatrixCounter(monthlyDisplay, roundMonthly, 300, '฿');
+            animateMatrixCounter(principalDisplay, P, 260, '฿');
+            animateMatrixCounter(interestDisplay, roundInterest, 260, '฿');
+            animateMatrixCounter(totalDisplay, roundTotal, 300, '฿');
         } else {
             if (monthlyDisplay) monthlyDisplay.textContent = '฿' + roundMonthly.toLocaleString('th-TH');
             if (principalDisplay) principalDisplay.textContent = '฿' + P.toLocaleString('th-TH');
             if (interestDisplay) interestDisplay.textContent = '฿' + roundInterest.toLocaleString('th-TH');
             if (totalDisplay) totalDisplay.textContent = '฿' + roundTotal.toLocaleString('th-TH');
         }
-
-        prevMonthly = roundMonthly;
-        prevPrincipal = P;
-        prevInterest = roundInterest;
-        prevTotal = roundTotal;
     }
 
     if (amountSlider && termSlider) {
@@ -219,94 +213,26 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // 3. 3D Interactive Card Tilt & Cursor Spotlight (Desktop & Laptops)
-    if (!window.matchMedia || !window.matchMedia('(pointer: coarse)').matches) {
-        const tiltCards = document.querySelectorAll('.card-3d, .hero-terminal-card, .calc-workbench-card, .cyber-gallery-card, .cyber-bento-item');
+    // 3. Cyber Liquid Neon Ripple on Click
+    const cyberButtons = document.querySelectorAll('.btn-primary-3d, .btn-outline-3d, .btn-special-3d');
+    cyberButtons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            const rect = btn.getBoundingClientRect();
+            const circle = document.createElement('span');
+            const diameter = Math.max(rect.width, rect.height);
+            const radius = diameter / 2;
 
-        tiltCards.forEach(card => {
-            let rect = null;
+            circle.style.width = circle.style.height = `${diameter}px`;
+            circle.style.left = `${e.clientX - rect.left - radius}px`;
+            circle.style.top = `${e.clientY - rect.top - radius}px`;
+            circle.classList.add('cyber-ripple');
 
-            function updateRect() {
-                rect = card.getBoundingClientRect();
-            }
+            const existing = btn.querySelector('.cyber-ripple');
+            if (existing) existing.remove();
 
-            card.addEventListener('mouseenter', function () {
-                updateRect();
-                card.style.transition = 'transform 0.1s ease-out, box-shadow 0.25s ease';
-            });
-
-            card.addEventListener('mousemove', function (e) {
-                if (!rect) updateRect();
-                const mouseX = e.clientX - rect.left;
-                const mouseY = e.clientY - rect.top;
-
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-
-                const percentX = (mouseX - centerX) / centerX;
-                const percentY = (mouseY - centerY) / centerY;
-
-                const rotateX = (-percentY * 5).toFixed(2);
-                const rotateY = (percentX * 5).toFixed(2);
-
-                card.style.setProperty('--mouse-x', `${mouseX}px`);
-                card.style.setProperty('--mouse-y', `${mouseY}px`);
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.012, 1.012, 1.012)`;
-                card.style.boxShadow = `0 24px 45px -15px rgba(11, 27, 52, 0.14), 0 0 25px rgba(102, 68, 236, 0.18)`;
-            });
-
-            card.addEventListener('mouseleave', function () {
-                card.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.35s ease';
-                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-                card.style.boxShadow = '';
-                rect = null;
-            });
-
-            window.addEventListener('resize', function () {
-                rect = null;
-            });
+            btn.appendChild(circle);
         });
-
-        // 4. Magnetic Kinetic Button Attraction
-        const magneticButtons = document.querySelectorAll('.btn-primary-3d, .btn-outline-3d, .btn-special-3d');
-
-        magneticButtons.forEach(btn => {
-            let btnRect = null;
-
-            function updateBtnRect() {
-                btnRect = btn.getBoundingClientRect();
-            }
-
-            btn.addEventListener('mouseenter', function () {
-                updateBtnRect();
-                btn.style.transition = 'transform 0.12s ease-out, box-shadow 0.2s ease';
-            });
-
-            btn.addEventListener('mousemove', function (e) {
-                if (!btnRect) updateBtnRect();
-                const mouseX = e.clientX - btnRect.left;
-                const mouseY = e.clientY - btnRect.top;
-
-                const centerX = btnRect.width / 2;
-                const centerY = btnRect.height / 2;
-
-                const deltaX = (mouseX - centerX) * 0.28;
-                const deltaY = (mouseY - centerY) * 0.28;
-
-                btn.style.transform = `translate3d(${deltaX.toFixed(2)}px, ${deltaY.toFixed(2)}px, 0) scale(1.035)`;
-            });
-
-            btn.addEventListener('mouseleave', function () {
-                btn.style.transition = 'transform 0.45s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease';
-                btn.style.transform = 'translate3d(0, 0, 0) scale(1)';
-                btnRect = null;
-            });
-
-            window.addEventListener('resize', function () {
-                btnRect = null;
-            });
-        });
-    }
+    });
 });
 </script>
 
